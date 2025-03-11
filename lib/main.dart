@@ -9,7 +9,7 @@ class SettingModule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Navigator(
-      key: Get.nestedKey(1), // Gunakan nested navigator agar tetap dalam module
+      key: Get.nestedKey(1),
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/detail':
