@@ -9,9 +9,6 @@ class SettingModule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      navigatorKey: Get.nestedKey(
-        1,
-      ), // Gunakan Nested Key agar navigasi tetap dalam modul
       debugShowCheckedModeBanner: false,
       title: 'Setting Module',
       initialRoute: "/setting",
