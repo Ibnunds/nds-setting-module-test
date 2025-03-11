@@ -16,7 +16,7 @@ class SettingScreen extends StatelessWidget {
               SizedBox(height: 20.0),
               GestureDetector(
                 onTap: () {
-                  Get.toNamed("/detail");
+                  Get.toNamed('/detail', id: 1);
                 },
                 child: Text("Go to detail settings"),
               ),
