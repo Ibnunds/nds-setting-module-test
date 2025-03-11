@@ -11,7 +11,13 @@ class SettingScreen extends StatelessWidget {
         title: Text("Setting"),
         leading: BackButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            if (Get.nestedKey(1)?.currentState?.canPop() ?? false) {
+              Get.back(
+                id: 1,
+              ); // Jika ada halaman di navigator module, pop dari situ
+            } else {
+              Get.back(); // Jika tidak, pop dari navigator utama
+            }
           },
         ),
       ),
