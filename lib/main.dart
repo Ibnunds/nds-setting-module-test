@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:nawa_utils/utils.dart';
 import 'package:settings_module/pages/detail_sccreen.dart';
 import 'package:settings_module/pages/setting_screen.dart';
 
@@ -8,29 +8,13 @@ class SettingModule extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      canPop: false, // Mencegah keluar langsung dari module
-      onPopInvokedWithResult: (didPop, result) {
-        if (!didPop) {
-          // Jika masih ada halaman dalam stack, pop dari navigator module
-          if (Get.nestedKey(1)?.currentState?.canPop() ?? false) {
-            Get.back(id: 1);
-          } else {
-            Get.back(); // Jika sudah di SettingScreen, kembali ke host
-          }
-        }
+    return NawaUtils.buildModuleApp(
+      id: 1,
+      routes: {
+        "/setting": () => SettingScreen(),
+        "/detail": () => DetailScreen(),
       },
-      child: Navigator(
-        key: Get.nestedKey(1),
-        onGenerateRoute: (settings) {
-          switch (settings.name) {
-            case '/detail':
-              return GetPageRoute(page: () => DetailScreen());
-            default:
-              return GetPageRoute(page: () => SettingScreen());
-          }
-        },
-      ),
+      initialScreen: () => SettingScreen(),
     );
   }
 }
