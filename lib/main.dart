@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:settings_module/pages/detail_sccreen.dart';
 import 'package:settings_module/pages/setting_screen.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const SettingModule());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class SettingModule extends StatelessWidget {
+  const SettingModule({super.key});
 
   // This widget is the root of your application.
   @override
