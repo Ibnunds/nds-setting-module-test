@@ -8,15 +8,17 @@ class SettingModule extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Navigator(
-      onGenerateRoute: (settings) {
-        switch (settings.name) {
-          case "/detail":
-            return GetPageRoute(page: () => DetailScreen());
-          default:
-            return GetPageRoute(page: () => SettingScreen());
-        }
-      },
+    return GetMaterialApp(
+      navigatorKey: Get.nestedKey(
+        1,
+      ), // Gunakan Nested Key agar navigasi tetap dalam modul
+      debugShowCheckedModeBanner: false,
+      title: 'Setting Module',
+      initialRoute: "/setting",
+      getPages: [
+        GetPage(name: "/setting", page: () => SettingScreen()),
+        GetPage(name: "/detail", page: () => DetailScreen()),
+      ],
     );
   }
 }
