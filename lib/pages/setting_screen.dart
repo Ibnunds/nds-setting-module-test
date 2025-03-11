@@ -11,7 +11,7 @@ class SettingScreen extends StatelessWidget {
         title: Text("Setting"),
         leading: BackButton(
           onPressed: () {
-            Get.back(id: 1);
+            Navigator.of(context).pop();
           },
         ),
       ),
