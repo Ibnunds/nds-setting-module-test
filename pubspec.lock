@@ -159,8 +159,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "v1.0.0"
-      resolved-ref: c10155f125c5c522aee6c729c5d5acaeed7a31a6
+      ref: "v1.0.1"
+      resolved-ref: a34b2069e1dee745a7e23a906e80c3c8bbce5813
       url: "https://github.com/Ibnunds/nds-flutter-utils-test.git"
     source: git
     version: "1.0.0+1"
