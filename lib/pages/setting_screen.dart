@@ -7,7 +7,6 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Setting"), leading: BackButton()),
       body: SafeArea(
         child: Center(
           child: Column(
